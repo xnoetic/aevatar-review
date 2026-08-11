@@ -1,14 +1,14 @@
 ---
-status: target
+status: current
 upstream_commit: f02aa690bbebb9cabeac30a553d737486b0eb661
 verified_at: 2026-07-25
 ---
 
 # Milestone 40 专题：NyxID Assistant Support Contract v1
 
-> 版本与结论：本章是 **milestone 40（NyxID Assistant Support Contract v1）专题登记表**，状态 `target`——它描述的是 2026-08-07 创建、**2026-08-08 已推进到 22 closed / 8 open** 的进行中里程碑（[milestone/40](https://github.com/aevatarAI/aevatar/milestone/40)），不是冻结基线 `f02aa690` 中的 shipped 事实，也**不是**路线承诺。事实来源为 milestone 描述、30 个 GitHub issue 正文、支持契约 spec Draft v3.2（gist `f45febb057a7182dab2495d4c739d2bb8d7026f5`，2026-08-06）与集成分支 `origin/feature/integrate@2426141` 上的 ADR-0048/0049 及实现（2026-08-09 `verified-static` 二次核验）。基线结论已按 `#3317` r10 **反转**：交付基线是 `origin/feature/integrate`（不再是 `dev`）。在 milestone 落地前，[07/01](01-conversation-turn-and-chat-history.md) 与 [07/02](02-nyxid-chat-actor-model-and-progress.md) 等 `current` 章节**保持原样**；本篇只做登记与导读，落地后按 [边界与演进](#边界与演进) 的清单回填。
+> 版本与结论：本章是 **milestone 40（NyxID Assistant Support Contract v1）专题记录**，状态 `current`——milestone 已于 **2026-08-10 closed**（[milestone/40](https://github.com/aevatarAI/aevatar/milestone/40)），30/30 个 issue 全部 closed，Release Gate `#3318` 认证生产 canary **22/22 验收全勾**（closeout SHA `7b3dee82`，image generation `2910/2910`、revision `1490`、Ready `1/1`、authenticated health `9/9`）。本篇由 `target` 专题登记转正为**落地记录**：冻结基线 `f02aa690` 中的 shipped 事实不因本篇改变，[07/01](01-conversation-turn-and-chat-history.md) 与 [07/02](02-nyxid-chat-actor-model-and-progress.md) 等 `current` 章节按冻结时点保持原样，本专题以 [spec v3.2](https://gist.github.com/ctkm-aelf/b4dd5182c5ac1efc2ad546ecb5f948f3)（Draft，gist `f45febb057a7182dab2495d4c739d2bb8d7026f5`）+ 30 个 issue + ADR-0048/0049 记录“为什么是它”的全景。基线结论（`#3317` r10）：交付基线是 `origin/feature/integrate`（不再是 `dev`）。
 >
-> 一句话：milestone 40 要在**一条** actor-owned `/api/chat` 主线上交付 NyxID Assistant Support Contract v1，让每个受支持的 CLI 意图都有明确且诚实的对话结局——`execute`、browser action、local command handoff 或 `decline`——并在 backend-console Studio 发布五个用例（UC1a/UC1b/UC2/UC3/UC4）的完整体验。它**不**声称所有 CLI 操作都能在聊天里执行。
+> 一句话：milestone 40 在**一条** actor-owned `/api/chat` 主线上交付了 NyxID Assistant Support Contract v1——每个受支持的 CLI 意图都有明确且诚实的对话结局（`execute`、browser action、local command handoff 或 `decline`），并在 backend-console Studio 发布了五个用例（UC1a/UC1b/UC2/UC3/UC4）的完整体验。它**不**声称所有 CLI 操作都能在聊天里执行；Wave 1（Tier A、`#3312`/NyxID#1400）明确在 M40 之外。
 
 ## 设计抽象与事实源
 
@@ -31,8 +31,8 @@ milestone 40 的完整叙述在 [milestone/40 描述](https://github.com/aevatar
 |---|---|---|
 | 产品承诺 | 每个受支持 CLI 意图都有诚实结局：`execute` / browser action / local command handoff / `decline`；不宣称 CLI 全量在 chat 内执行 | [spec v3.2 §0](https://gist.github.com/ctkm-aelf/b4dd5182c5ac1efc2ad546ecb5f948f3) 与 §9 义务表 |
 | 执行路径 | 单条 actor-owned `/api/chat` 主干（收敛 `#3296` **已完成**）+ 分操作类边界（`#3297` ADR-0048 **已 accepted**）+ 准入工具面（`#3298`/`#3299`/`#3300`） | `origin/feature/integrate` 上 `MainnetChatEndpoints` 已按 9 个 type 判别器分类、`ExternalWorkflowChatCompatibilityAdapter` 承接旧形状 |
-| 体验交付 | Studio 五个用例 UC1a/UC1b（`#3314`，open）与 UC2/UC3/UC4 控件（`#3316`，open） | 确定性 fixture 验收 + 生产 canary（`#3318`，open） |
-| 完成契约 | 机器可读 conformance manifest 钉源码摘要；committed actor state 与 read-model 证据才算完成；ACK 文本、卡片外观不算 | `#3313` manifest、`#3318` canary 证据包 |
+| 体验交付 | Studio 五个用例 UC1a/UC1b（`#3314`，closed）与 UC2/UC3/UC4 控件（`#3316`，closed） | 确定性 fixture 验收 + 生产 canary（`#3318`，**closed，22/22 验收**） |
+| 完成契约 | 机器可读 conformance manifest 钉源码摘要；committed actor state 与 read-model 证据才算完成；ACK 文本、卡片外观不算 | `#3313` manifest、`#3318` canary 证据包（closeout SHA `7b3dee82`） |
 
 ```mermaid
 %%{init: {"maxTextSize": 100000, "flowchart": {"useMaxWidth": false, "nodeSpacing": 16, "rankSpacing": 44}, "themeVariables": {"fontSize": "10px"}}}%%
@@ -41,8 +41,11 @@ flowchart TB
     S["支持契约 spec v3.2<br/>五类操作 R / A / L / X + 计划词汇"]
     T["单条 actor-owned /api/chat 主干<br/>收敛 #3296 + 边界 #3297 + 执行面 #3320"]
     U["五个用例<br/>UC1a 未连接 GitHub<br/>UC1b 已连接 GitHub<br/>UC2 订餐 steering<br/>UC3 报销失败恢复<br/>UC4 HR 重规划"]
-    G["五个 Gate<br/>G0 基线对账 ✓ 完成<br/>→ G1 单主干与准入(部分完成)<br/>→ G2 UC1a/1b 垂直切片<br/>→ G3 控制与恢复 → G4 发布证明"]
-    E["完成证据<br/>conformance manifest + 确定性 fixture<br/>+ 认证生产 canary + committed state"]
+    G["五个 Gate<br/>G0 基线对账 ✓ 完成<br/>→ G1 单主干与准入 ✓ 完成<br/>→ G2 UC1a/1b 垂直切片 ✓ 完成<br/>→ G3 控制与恢复 ✓ 完成<br/>→ G4 发布证明 ✓ 完成(canary 22/22)"]
+    E["完成证据(2026-08-10)
+conformance manifest + 确定性 fixture
++ 认证生产 canary 22/22 + committed state
+closeout SHA 7b3dee82"]
     P --> S --> T --> U --> G --> E
 ```
 
@@ -93,18 +96,18 @@ milestone 保持一个，但工作与验收通过显式 Gate 推进。每个 Gat
 flowchart LR
     G0["Gate 0 基线对账 ✓<br/>#3317 基线=feature/integrate@2426141<br/>#3315 契约对账+五类盘点"]
     G1["Gate 1 单主干与准入(部分)<br/>#3296 收敛 ✓ #3297 边界ADR ✓<br/>#3320 准入执行面 #3298 读集<br/>#3299 allowlist #3300 凭证<br/>#3311 approval 契约决策 ✓<br/>(实现/证据仍待：3296/3152/3320/3300)"]
-    G2["Gate 2 UC1a/1b 垂直切片<br/>#3301 计划词汇 #3302 plan gate<br/>#3304 稳定 taskId #3305 verify<br/>#3307 复合问询 #3314 Studio<br/>#3324 lane-A 观察(open)<br/>+ #3131 #3152 #3154<br/>+ legacy #3177 #3167 已 superseded"]
+    G2["Gate 2 UC1a/1b 垂直切片<br/>#3301 计划词汇 #3302 plan gate<br/>#3304 稳定 taskId #3305 verify<br/>#3307 复合问询 #3314 Studio<br/>#3324 lane-A 观察 ✓ closed<br/>+ #3131 #3152 #3154<br/>+ legacy #3177 #3167 已 superseded"]
     G3["Gate 3 控制与恢复<br/>#3303 substeps #3306 stall<br/>#3308 诚实不能 #3310 retry<br/>#3316 Studio 控件 #3321 re-plan"]
     G4["Gate 4 对齐与发布<br/>#3309 L/X 诚实结局<br/>#3313 conformance SSOT<br/>#3318 生产 canary<br/>(#3312 在 milestone 外)"]
     R["完成<br/>5 个 UC 形状 + guards<br/>+ 部署修订记录"]
     G0 --> G1 --> G2 --> G3 --> G4 --> R
 ```
 
-- **Gate 0（#3317 + #3315）**：绑定基线决策规则——**唯一交付基线是 `origin/feature/integrate@2426141`**（`#3317` r10 决策，替代早期 `dev` 假设；`dev` 不再参与 M40）。先盘点已 shipped 工作、按 issue 分类（`completed` / `missing` / `present-needs-tests` / `present-needs-production-evidence` / `obsolete`，清单见 [Gate 0 inventory](https://github.com/aevatarAI/aevatar/blob/2426141821fd974edced771453b0bad486019944/docs/audit-scorecard/2026-08-07-milestone-40-gate-0-inventory.md)），再开始实现。**状态：complete**（`#3317` 8/8 验收、`#3315` 5/5 验收全部勾选）。
-- **Gate 1**：单主干与准入能力面。`#3296` 收敛两条执行路径（见[技术细节 D](#技术细节-d单主干收敛与-typed-operation-policy)，**已落地**：integrate 上 `ExternalWorkflowChatCompatibilityAdapter` 承接旧形状）；`#3297` 输出分操作类边界 ADR（**已 accepted**：ADR-0048）；`#3320` 落地 Class-P 准入执行面（Gate 1 缺口由 2026-08-07 review 补出：原先没有任何 issue 交付 Class-P 执行）。**状态**：`#3297`/`#3298`/`#3299`/`#3311` 完成；`#3296`/`#3320`/`#3300`（G1 主体）与 `#3152`（G2 职责、被 milestone 描述列入 G1 证据追踪）closed 但仍为**实现/证据 owner**（milestone 描述明确要求保留）。
-- **Gate 2**：UC1a/UC1b 垂直切片——计划词汇与统一 decoder（`#3301`）、plan gate（`#3302`）、稳定 taskId + planRevision（`#3304`）、verify 泛化（`#3305`）、复合 scoping 问询（`#3307`）、Studio 体验（`#3314`），加上前序 feature 遗留（`#3131` pending input、`#3152` readiness 身份、`#3154` needs-you 恢复）与 lane-A 审批观察/恢复实现（`#3324`，2026-08-08 新开，open；在 Tier B/Option 2 下不可实现，见[技术细节 E](#技术细节-e分操作类边界与审批契约3297-3311)）。legacy `#3167`/`#3177` 已由 `#3314` r3 **解除 blocker 身份**（converged actor-owned 路径下 superseded）并随 `#3314` 关闭。**状态**：`#3301`/`#3302`/`#3304`/`#3307`/`#3131`/`#3152`/`#3154` closed；`#3305`/`#3314`/`#3324` open。
-- **Gate 3**：UC2/UC3/UC4 控制与恢复——substeps（`#3303`）、进度/stall（`#3306`）、工具偏好与诚实不能（`#3308`）、retry lane（`#3310`）、Studio 控件（`#3316`）、steering 与 failure-driven re-plan（`#3321`）。**状态**：`#3303`/`#3308` closed；`#3306`/`#3310`/`#3316`/`#3321` open。
-- **Gate 4**：对齐与发布证明——Class-L/X 诚实结局（`#3309`）、conformance SSOT 与对抗性 harness（`#3313`）、认证生产 canary（`#3318`）。reauthorize/key 生命周期（`#3312`）**不在本 milestone**：它是显式未挂载的 Wave 1 跨仓库 epic，随 `#3311` 的 Tier A 外移。**状态**：`#3309`/`#3313` closed；`#3318` open。
+- **Gate 0（#3317 + #3315）**：绑定基线决策规则——**唯一交付基线是 `origin/feature/integrate@2426141`**（`#3317` r10 决策，替代早期 `dev` 假设；`dev` 不再参与 M40）。先盘点已 shipped 工作、按 issue 分类（`completed` / `missing` / `present-needs-tests` / `present-needs-production-evidence` / `obsolete`，清单见 [Gate 0 inventory](https://github.com/aevatarAI/aevatar/blob/2426141821fd974edced771453b0bad486019944/docs/audit-scorecard/2026-08-07-milestone-40-gate-0-inventory.md)），再开始实现。**状态：complete**（`#3317` 9/9 验收、`#3315` 5/5 验收全部勾选）。
+- **Gate 1**：单主干与准入能力面。`#3296` 收敛两条执行路径（见[技术细节 D](#技术细节-d单主干收敛与-typed-operation-policy)，**已落地**：integrate 上 `ExternalWorkflowChatCompatibilityAdapter` 承接旧形状）；`#3297` 输出分操作类边界 ADR（**已 accepted**：ADR-0048）；`#3320` 落地 Class-P 准入执行面（Gate 1 缺口由 2026-08-07 review 补出：原先没有任何 issue 交付 Class-P 执行）。**状态：complete**——G1 全部 7 个 issue closed（2026-08-08）：`#3296`（收敛已落地）、`#3297`（ADR-0048）、`#3298`/`#3299`/`#3300`（读集/allowlist/凭证）、`#3320`（Class-P 执行面）、`#3311`（审批契约决策，5/5 验收）。实现/证据由各自 close 记录与 `#3318` canary 证据包承接。
+- **Gate 2**：UC1a/UC1b 垂直切片——计划词汇与统一 decoder（`#3301`）、plan gate（`#3302`）、稳定 taskId + planRevision（`#3304`）、verify 泛化（`#3305`）、复合 scoping 问询（`#3307`）、Studio 体验（`#3314`），加上前序 feature 遗留（`#3131` pending input、`#3152` readiness 身份、`#3154` needs-you 恢复）与 lane-A 审批观察/恢复实现（`#3324`，2026-08-08 新开，open；在 Tier B/Option 2 下不可实现，见[技术细节 E](#技术细节-e分操作类边界与审批契约3297-3311)）。legacy `#3167`/`#3177` 已由 `#3314` r3 **解除 blocker 身份**（converged actor-owned 路径下 superseded）并随 `#3314` 关闭。**状态：complete**——G2 全部 10 个 issue closed：`#3301`/`#3302`/`#3304`/`#3305`/`#3307`/`#3314`/`#3131`/`#3152`/`#3154`/`#3324`（其中 `#3324` 按 `#3311` 的 Tier B 落地 lane-A 审批观察/恢复，含 restart-safe effect reconciliation；见[技术细节 E](#技术细节-e分操作类边界与审批契约3297-3311)）。legacy `#3167`/`#3177` 已由 `#3314` r3 **解除 blocker 身份**并随 `#3314` 关闭。
+- **Gate 3**：UC2/UC3/UC4 控制与恢复——substeps（`#3303`）、进度/stall（`#3306`）、工具偏好与诚实不能（`#3308`）、retry lane（`#3310`）、Studio 控件（`#3316`）、steering 与 failure-driven re-plan（`#3321`）。**状态：complete**——G3 全部 6 个 issue closed（`#3303`/`#3306`/`#3308`/`#3310`/`#3316`/`#3321`）。
+- **Gate 4**：对齐与发布证明——Class-L/X 诚实结局（`#3309`）、conformance SSOT 与对抗性 harness（`#3313`）、认证生产 canary（`#3318`）。reauthorize/key 生命周期（`#3312`）**不在本 milestone**：它是显式未挂载的 Wave 1 跨仓库 epic，随 `#3311` 的 Tier A 外移。**状态：complete**——G4 全部 3 个 issue closed；`#3318`（Release Gate）于 2026-08-10 完成认证生产 canary，**22/22 验收全勾**（UC1a–UC4 各含确定性 repo 证据 + 独立认证生产结果；证据包无任何凭据/令牌/原始工具参数；closeout SHA `7b3dee82` 以 exact image generation `2910/2910`、revision `1490`、Ready `1/1`、authenticated health `9/9` 部署并核验）。
 
 ## 技术细节 A：v4 wire 契约与三种事实 owner
 
@@ -202,7 +205,7 @@ stateDiagram-v2
 
 ## 边界与演进
 
-### 与已有章节的关系（未落地前只链接、不修改）
+### 与已有章节的关系（专题登记期只链接、不修改）
 
 | 已有章节 | 关系 |
 |---|---|
@@ -216,23 +219,23 @@ stateDiagram-v2
 
 ### 落地后的更新路径（回填清单）
 
-milestone 落地（Gate 4 通过）后，按此顺序回填，避免污染 `current`。**已发生**的用 ✓ 标注（2026-08-08）：
+milestone 已于 **2026-08-10 closed**（Gate 4 通过，canary 22/22）。本篇已执行 1–2；3–5 属于 `current` 章节与索引回填，需独立任务执行，避免一次改动污染多章：
 
 1. ✓ **Gate 0 对账结果** → 本篇已完成：基线改为 `feature/integrate@2426141`（`#3317` r10）；`NyxIdAssistantToolSource`/`NyxIdProxyTool`/`AgentProfileTurnCatalogMaterializer` 等组件已随集成分支进入唯一基线（不再是"只在 integration lineage"）。
-2. ✓ **#3296 收敛完成** → 本篇已按 integrate 现状更新（三类分类器 + `ExternalWorkflowChatCompatibilityAdapter`）；`07/02` 等 `current` 章节仍保持旧状，待 milestone 整体落地后统一回填。
-3. **#3301/#3304/#3321 落地** → 07/02 的 control-fence 段落改写为"同计划修订"语义，并链接本专题。
-4. **#3297 ADR 合并** → ADR-0048/0049 已 accepted（integrate），合并后注册到 [13/02 Canon 与 ADR 索引](../13/02-canon-and-adr-index.md)。
-5. **#3313 manifest 落地** → 本专题附录的 issue 表可替换为机器可读 manifest 引用。
+2. ✓ **#3296 收敛完成** → 本篇已按 integrate 现状更新（三类分类器 + `ExternalWorkflowChatCompatibilityAdapter`）；`07/02` 等 `current` 章节按冻结时点保持原样。
+3. **#3301/#3304/#3321 落地**（回填任务）→ 07/02 的 control-fence 段落改写为"同计划修订"语义，并链接本专题。
+4. **#3297 ADR 合并**（回填任务）→ ADR-0048/0049 已 accepted（integrate），合并后注册到 [13/02 Canon 与 ADR 索引](../13/02-canon-and-adr-index.md)。
+5. **#3313 manifest 落地**（回填任务）→ 本专题附录的 issue 表可替换为机器可读 manifest 引用。
 
 ### 本专题的局限
 
-- 30 个 issue 的状态、依赖与 Gate 归属是 **2026-08-08 的静态快照**（`verified-static`）；issue 正文可能随时修订（多数带 `rN` 修订标记，review 迭代仍在进行）。**closed ≠ 验收全勾**：目前只有 `#3317`（8/8）、`#3315`（5/5）、`#3311`（5/5）验收勾选完整；其余 closed issue 多为契约/决策/盘点关闭，实现与证据仍由 milestone 描述显式追踪（如 `#3296`/`#3152`/`#3320`/`#3300`；其中 `#3152` 职责在 G2，被 milestone 描述列入 G1 证据追踪）。
-- spec v3.2 仍是 **Draft**；`#3315` 已完成与基线的对账（closed，验收 5/5），gist 保持可变的 design input，ADR-0048/0049 与 `#3313` manifest 才是实现权威。
+- 30 个 issue 的状态、依赖与 Gate 归属是 **2026-08-10（milestone closed）的静态快照**；issue 正文带 `rN` 修订标记，close 记录与 `#3318` 证据包是验收权威。验收勾选完整的有 `#3317`（9/9）、`#3315`（5/5）、`#3311`（5/5）、`#3318`（22/22）；其余 closed issue 的验收/实现证据以各自 close 记录为准。
+- spec v3.2 仍是 **Draft**；`#3315` 已完成与基线的对账（closed，验收 5/5），gist 保持可变的 design input，ADR-0048/0049 与 `#3313` manifest 是已落地的实现权威。
 - 本篇引用的 `agents/...` 路径以本地工作树 HEAD 为准；integrate 独有文件（ADR-0048/0049、`ExternalWorkflowChatCompatibilityAdapter.cs`、Gate 0 inventory）以 GitHub 链接引用（双基准中不存在，不触发锚点检查）。`NyxIdAssistantToolSource.cs`、`NyxIdProxyTool.cs`、`AgentProfileTurnCatalogMaterializer.cs` 在本地工作树（`dev`）不存在——这在 2026-08-08 之后不再证明"未落地"，而是证明 `dev` 已脱离 M40 交付基线。
 
 ## 读完应能回答
 
-- milestone 40 的产品承诺是什么？它**不**承诺什么？（Wave 1/Tier A 在 M40 之外）
+- milestone 40 的产品承诺是什么？它**不**承诺什么？（Wave 1/Tier A 在 M40 之外；M40 只交付 Wave 0 + UC1a–UC4）
 - 为什么 2026-08-07 时 chat "只能执行一个 browser action、挂载零个 NyxID 工具"是必须用里程碑解决的结构问题，而不只是补功能？
 - 五个用例 UC1a/UC1b/UC2/UC3/UC4 各验证哪条机制？分别归哪个 Gate？
 - v4 契约的九个命令（含 `plan.resolve`）、三种事实 owner、完整操作键是什么？为什么实现比 spec 多一个命令反而是"shipped wire 优先"的实例？
@@ -240,43 +243,43 @@ milestone 落地（Gate 4 通过）后，按此顺序回填，避免污染 `curr
 - plan gate 为什么是"derived"而不是"chosen"？为什么 Aevatar 侧确认与 NyxID 侧授权是**两个独立权威**（ADR-0049）？
 - 为什么"NyxID 缺口是显式依赖"与"Aevatar 不得合成第二个审批权威"是同一枚硬币的两面？Tier B 为什么是 M40 的当选范围？
 - 完成契约为什么把 committed state 证据、确定性 fixture、生产 canary 三者分开？
-- 2026-08-08 时 22 个 issue 已 closed：哪些验收全勾、哪些只是决策/盘点关闭但实现与证据仍在追踪？
+- 2026-08-10 里程碑 closed 时，30/30 全部 closed：`#3317`/`#3315`/`#3311`/`#3318` 验收勾选完整（9/9、5/5、5/5、22/22），其余 closed issue 的验收以 close 记录与 canary 证据包为准——"closed" 与"验收全勾"如何区分？
 
-## 附录：30 个 issue 一览（2026-08-08 快照）
+## 附录：30 个 issue 一览（2026-08-10 milestone closed 快照）
 
 | Issue | Gate | 状态 | 一句话职责 |
 |---|---:|---|---|
 | [#3317](https://github.com/aevatarAI/aevatar/issues/3317) | G0 | ✅ closed | 唯一交付基线=`feature/integrate@2426141`（r10，替代早期 `dev` 假设）；按五类盘点 30 个 issue（Gate 0 inventory） |
 | [#3315](https://github.com/aevatarAI/aevatar/issues/3315) | G0 | ✅ closed | 支持契约声明与选定基线对账（spec reconcile，验收 5/5） |
-| [#3296](https://github.com/aevatarAI/aevatar/issues/3296) | G1 | ◐ closed* | 收敛 /api/chat 到单 actor-owned 执行路径（integrate 已落地三类分类器 + 兼容适配器；证据仍追踪） |
+| [#3296](https://github.com/aevatarAI/aevatar/issues/3296) | G1 | ✅ closed | 收敛 /api/chat 到单 actor-owned 执行路径（integrate 已落地三类分类器 + 兼容适配器） |
 | [#3297](https://github.com/aevatarAI/aevatar/issues/3297) | G1 | ✅ closed | 分操作类边界 ADR（**ADR-0048 accepted**；R/A/P/L/X 五类各走固定机制） |
-| [#3320](https://github.com/aevatarAI/aevatar/issues/3320) | G1 | ◐ closed* | 交付 Class-P 准入连接服务执行面（Gate 1 补出的缺口；证据仍追踪） |
+| [#3320](https://github.com/aevatarAI/aevatar/issues/3320) | G1 | ✅ closed | 交付 Class-P 准入连接服务执行面（Gate 1 补出的缺口） |
 | [#3298](https://github.com/aevatarAI/aevatar/issues/3298) | G1 | ✅ closed | 激活 Class-R 读集并补 parity reads |
 | [#3299](https://github.com/aevatarAI/aevatar/issues/3299) | G1 | ✅ closed | chat 路由 NyxID 工具暴露 allowlist-by-default（spec 的 G7 gap，安全前置） |
-| [#3300](https://github.com/aevatarAI/aevatar/issues/3300) | G1 | ◐ closed* | chat-turn NyxID 凭证生命周期（delegation refresh / bearer 决策；证据仍追踪） |
+| [#3300](https://github.com/aevatarAI/aevatar/issues/3300) | G1 | ✅ closed | chat-turn NyxID 凭证生命周期（delegation refresh / bearer 决策） |
 | [#3311](https://github.com/aevatarAI/aevatar/issues/3311) | G1+G2 | ✅ closed | approval 契约决策（r6 选 **Tier B = Option 2**；验收 5/5）+ lane-B 观察实现 |
 | [#3301](https://github.com/aevatarAI/aevatar/issues/3301) | G2 | ✅ closed | TaskPlan wire 词汇落地 + frame/state 统一 decoder |
 | [#3302](https://github.com/aevatarAI/aevatar/issues/3302) | G2 | ✅ closed | derived plan gate + propose-then-run 沟通（ADR-0049） |
 | [#3304](https://github.com/aevatarAI/aevatar/issues/3304) | G2 | ✅ closed | 稳定 taskId + planRevision（action continuation 路径） |
-| [#3305](https://github.com/aevatarAI/aevatar/issues/3305) | G2 | ⬜ open | verify 阶段泛化到 effect-capable 步骤 |
+| [#3305](https://github.com/aevatarAI/aevatar/issues/3305) | G2 | ✅ closed | verify 阶段泛化到 effect-capable 步骤 |
 | [#3307](https://github.com/aevatarAI/aevatar/issues/3307) | G2 | ✅ closed | 复合 scoping 问询（一次问完、一条 free-text 回答） |
-| [#3314](https://github.com/aevatarAI/aevatar/issues/3314) | G2 | ⬜ open | Studio UC1a/UC1b 体验（plan/connect/approval/verify/rehydration）；r3 解除 legacy #3167/#3177 blocker |
+| [#3314](https://github.com/aevatarAI/aevatar/issues/3314) | G2 | ✅ closed | Studio UC1a/UC1b 体验（plan/connect/approval/verify/rehydration）；r3 解除 legacy #3167/#3177 blocker |
 | [#3131](https://github.com/aevatarAI/aevatar/issues/3131) | G2 | ✅ closed | pending input / approval / conversation attention 投影（前序遗留） |
-| [#3152](https://github.com/aevatarAI/aevatar/issues/3152) | G2 | ◐ closed* | tool step 上投影权威 readinessCapabilityId（证据仍追踪） |
+| [#3152](https://github.com/aevatarAI/aevatar/issues/3152) | G2 | ✅ closed | tool step 上投影权威 readinessCapabilityId |
 | [#3154](https://github.com/aevatarAI/aevatar/issues/3154) | G2 | ✅ closed | needs-you 解析恢复权威任务（前序遗留） |
-| [#3167](https://github.com/aevatarAI/aevatar/issues/3167) | — | ◐ closed | legacy：action-eligible turn 无卡片（converged 路径下 superseded，不再 blocker） |
-| [#3177](https://github.com/aevatarAI/aevatar/issues/3177) | — | ◐ closed | legacy：nyxid_require_service 永不发连接卡（converged 路径下 superseded，不再 blocker） |
-| [#3324](https://github.com/aevatarAI/aevatar/issues/3324) | G2 | ⬜ open | lane-A approval observation/resume 实现（2026-08-08 新开；Tier B 下明确**不可实现**，以展示型证据登记） |
+| [#3167](https://github.com/aevatarAI/aevatar/issues/3167) | — | ✅ closed | legacy：action-eligible turn 无卡片（converged 路径下 superseded，不再 blocker） |
+| [#3177](https://github.com/aevatarAI/aevatar/issues/3177) | — | ✅ closed | legacy：nyxid_require_service 永不发连接卡（converged 路径下 superseded，不再 blocker） |
+| [#3324](https://github.com/aevatarAI/aevatar/issues/3324) | G2 | ✅ closed | lane-A approval observation/resume 实现（2026-08-08 新开，按 `#3311` Tier B 落地：per_request 观察 + restart-safe effect reconciliation） |
 | [#3303](https://github.com/aevatarAI/aevatar/issues/3303) | G3 | ✅ closed | 展示性 substeps（一层深、无操作键） |
-| [#3306](https://github.com/aevatarAI/aevatar/issues/3306) | G3 | ⬜ open | 30s 进度心跳 + 120s 诚实 stall |
+| [#3306](https://github.com/aevatarAI/aevatar/issues/3306) | G3 | ✅ closed | 30s 进度心跳 + 120s 诚实 stall |
 | [#3308](https://github.com/aevatarAI/aevatar/issues/3308) | G3 | ✅ closed | 工具偏好顺序 + 泛化 cannot-check 诚实性 |
-| [#3310](https://github.com/aevatarAI/aevatar/issues/3310) | G3 | ⬜ open | retry lane（reconcile-first、新审批、generation 重入） |
-| [#3316](https://github.com/aevatarAI/aevatar/issues/3316) | G3 | ⬜ open | Studio UC2/3/4 控件（steer/stop/re-plan/stall/retry/reconcile） |
-| [#3321](https://github.com/aevatarAI/aevatar/issues/3321) | G3 | ⬜ open | steering 与 failure-driven re-plan 语义（同任务修订；ADR-0049 五个 typed causes） |
+| [#3310](https://github.com/aevatarAI/aevatar/issues/3310) | G3 | ✅ closed | retry lane（reconcile-first、新审批、generation 重入） |
+| [#3316](https://github.com/aevatarAI/aevatar/issues/3316) | G3 | ✅ closed | Studio UC2/3/4 控件（steer/stop/re-plan/stall/retry/reconcile） |
+| [#3321](https://github.com/aevatarAI/aevatar/issues/3321) | G3 | ✅ closed | steering 与 failure-driven re-plan 语义（同任务修订；ADR-0049 五个 typed causes） |
 | [#3309](https://github.com/aevatarAI/aevatar/issues/3309) | G4 | ✅ closed | Class-L 移交与 Class-X 诚实拒绝（修订后不暗示 chat 内执行） |
 | [#3313](https://github.com/aevatarAI/aevatar/issues/3313) | G4 | ✅ closed | 仓库内 conformance SSOT + 对抗性 harness（prompt injection 等） |
-| [#3318](https://github.com/aevatarAI/aevatar/issues/3318) | G4 | ⬜ open | 认证生产 canary（专用身份 + 受制裁写目标 + committed 证据） |
+| [#3318](https://github.com/aevatarAI/aevatar/issues/3318) | G4 | ✅ closed | 认证生产 canary（专用身份 + 受制裁写目标 + committed 证据；**22/22 验收，closeout SHA `7b3dee82`**） |
 
-> 状态图例：✅ closed = 已关闭（仅 `#3317`/`#3315`/`#3311` 验收勾选完整）；◐ closed = 已关闭但**实现/证据仍由 milestone 描述追踪**（标 * 的 `#3296`/`#3152`/`#3320`/`#3300`）；⬜ open = 仍开放。`#3312`（reauthorize + key 生命周期，Wave 1 跨仓库 epic）**未挂载于本 milestone**，不在上表；`#3167`/`#3177` 已由 `#3314` r3 解除 blocker 身份。
+> 状态图例：milestone 已于 **2026-08-10 closed，30/30 全部 ✅ closed**。验收勾选完整的有 `#3317`（9/9）、`#3315`（5/5）、`#3311`（5/5）、`#3318`（22/22，Release Gate 生产 canary）；其余 closed issue 的验收/实现证据以各自 close 记录与 `#3318` 证据包为准。`#3312`（reauthorize + key 生命周期，Wave 1 跨仓库 epic）**未挂载于本 milestone**，不在上表；`#3167`/`#3177` 已由 `#3314` r3 解除 blocker 身份。
 
 > 外部链接：milestone 描述与 30 个 issue 均在 [aevatarAI/aevatar](https://github.com/aevatarAI/aevatar)；支持契约 spec Draft v3.2 为公开 gist（`ctkm-aelf/b4dd5182c5ac1efc2ad546ecb5f948f3`，修订 `f45febb057a7182dab2495d4c739d2bb8d7026f5`）。

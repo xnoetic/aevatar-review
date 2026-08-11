@@ -6,7 +6,7 @@
 >
 > 实施顺序与逐行 `status`：`docs/superpowers/plans/2026-07-25-aevatar-review-restructure.md` Tasks 5–18 主题表
 >
-> 本清单只列 72 篇**实质章节**。14 个 block `index.md` 由 Task 19 统一改写，不计入本清单。`07/05` 是 milestone 40 专题登记（`target`，未落地），同样不计入 72 篇；其行内 `issue:` 按例外填 milestone URL（见"行格式"）。
+> 本清单只列 72 篇**实质章节**。14 个 block `index.md` 由 Task 19 统一改写，不计入本清单。`07/05` 是 milestone 40 专题记录（`current`，2026-08-10 已落地），同样不计入 72 篇；其行内 `issue:` 按例外填 milestone URL（见"行格式"）。
 
 ## 行格式
 
@@ -81,7 +81,7 @@
 - [x] `07/02-nyxid-chat-actor-model-and-progress.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/204
 - [x] `07/03-agent-profile-and-immutable-binding.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/205
 - [x] `07/04-turn-authority-tool-catalog-and-retry.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/206
-- [x] `07/05-milestone-40-nyxid-assistant-support-contract.md` — status:target — issue:https://github.com/aevatarAI/aevatar/milestone/40
+- [x] `07/05-milestone-40-nyxid-assistant-support-contract.md` — status:current — issue:https://github.com/aevatarAI/aevatar/milestone/40
 
 ## `08` Ingress、Channel、文件与语音（5）
 
