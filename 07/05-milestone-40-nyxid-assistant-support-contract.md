@@ -105,7 +105,7 @@ flowchart LR
 
 - **Gate 0（#3317 + #3315）**：绑定基线决策规则——**唯一交付基线是 `origin/feature/integrate@2426141`**（`#3317` r10 决策，替代早期 `dev` 假设；`dev` 不再参与 M40）。先盘点已 shipped 工作、按 issue 分类（`completed` / `missing` / `present-needs-tests` / `present-needs-production-evidence` / `obsolete`，清单见 [Gate 0 inventory](https://github.com/aevatarAI/aevatar/blob/2426141821fd974edced771453b0bad486019944/docs/audit-scorecard/2026-08-07-milestone-40-gate-0-inventory.md)），再开始实现。**状态：complete**（`#3317` 9/9 验收、`#3315` 5/5 验收全部勾选）。
 - **Gate 1**：单主干与准入能力面。`#3296` 收敛两条执行路径（见[技术细节 D](#技术细节-d单主干收敛与-typed-operation-policy)，**已落地**：integrate 上 `ExternalWorkflowChatCompatibilityAdapter` 承接旧形状）；`#3297` 输出分操作类边界 ADR（**已 accepted**：ADR-0048）；`#3320` 落地 Class-P 准入执行面（Gate 1 缺口由 2026-08-07 review 补出：原先没有任何 issue 交付 Class-P 执行）。**状态：complete**——G1 全部 7 个 issue closed（2026-08-08）：`#3296`（收敛已落地）、`#3297`（ADR-0048）、`#3298`/`#3299`/`#3300`（读集/allowlist/凭证）、`#3320`（Class-P 执行面）、`#3311`（审批契约决策，5/5 验收）。实现/证据由各自 close 记录与 `#3318` canary 证据包承接。
-- **Gate 2**：UC1a/UC1b 垂直切片——计划词汇与统一 decoder（`#3301`）、plan gate（`#3302`）、稳定 taskId + planRevision（`#3304`）、verify 泛化（`#3305`）、复合 scoping 问询（`#3307`）、Studio 体验（`#3314`），加上前序 feature 遗留（`#3131` pending input、`#3152` readiness 身份、`#3154` needs-you 恢复）与 lane-A 审批观察/恢复实现（`#3324`，2026-08-08 新开，open；在 Tier B/Option 2 下不可实现，见[技术细节 E](#技术细节-e分操作类边界与审批契约3297-3311)）。legacy `#3167`/`#3177` 已由 `#3314` r3 **解除 blocker 身份**（converged actor-owned 路径下 superseded）并随 `#3314` 关闭。**状态：complete**——G2 全部 10 个 issue closed：`#3301`/`#3302`/`#3304`/`#3305`/`#3307`/`#3314`/`#3131`/`#3152`/`#3154`/`#3324`（其中 `#3324` 按 `#3311` 的 Tier B 落地 lane-A 审批观察/恢复，含 restart-safe effect reconciliation；见[技术细节 E](#技术细节-e分操作类边界与审批契约3297-3311)）。legacy `#3167`/`#3177` 已由 `#3314` r3 **解除 blocker 身份**并随 `#3314` 关闭。
+- **Gate 2**：UC1a/UC1b 垂直切片——计划词汇与统一 decoder（`#3301`）、plan gate（`#3302`）、稳定 taskId + planRevision（`#3304`）、verify 泛化（`#3305`）、复合 scoping 问询（`#3307`）、Studio 体验（`#3314`），加上前序 feature 遗留（`#3131` pending input、`#3152` readiness 身份、`#3154` needs-you 恢复）与 lane-A 审批观察/恢复实现（`#3324`，2026-08-08 新开，closed；按 `#3311` Tier B 落地，见[技术细节 E](#技术细节-e分操作类边界与审批契约3297-3311)）。legacy `#3167`/`#3177` 已由 `#3314` r3 **解除 blocker 身份**（converged actor-owned 路径下 superseded）并随 `#3314` 关闭。**状态：complete**——G2 全部 10 个 issue closed：`#3301`/`#3302`/`#3304`/`#3305`/`#3307`/`#3314`/`#3131`/`#3152`/`#3154`/`#3324`。
 - **Gate 3**：UC2/UC3/UC4 控制与恢复——substeps（`#3303`）、进度/stall（`#3306`）、工具偏好与诚实不能（`#3308`）、retry lane（`#3310`）、Studio 控件（`#3316`）、steering 与 failure-driven re-plan（`#3321`）。**状态：complete**——G3 全部 6 个 issue closed（`#3303`/`#3306`/`#3308`/`#3310`/`#3316`/`#3321`）。
 - **Gate 4**：对齐与发布证明——Class-L/X 诚实结局（`#3309`）、conformance SSOT 与对抗性 harness（`#3313`）、认证生产 canary（`#3318`）。reauthorize/key 生命周期（`#3312`）**不在本 milestone**：它是显式未挂载的 Wave 1 跨仓库 epic，随 `#3311` 的 Tier A 外移。**状态：complete**——G4 全部 3 个 issue closed；`#3318`（Release Gate）于 2026-08-10 完成认证生产 canary，**22/22 验收全勾**（UC1a–UC4 各含确定性 repo 证据 + 独立认证生产结果；证据包无任何凭据/令牌/原始工具参数；closeout SHA `7b3dee82` 以 exact image generation `2910/2910`、revision `1490`、Ready `1/1`、authenticated health `9/9` 部署并核验）。
 
@@ -186,7 +186,7 @@ stateDiagram-v2
 **#3311 审批契约**（r6 决策，2026-08-08）：**Tier B = Option 2（no-NyxID-change fallback）当选 M40 范围**——两条决策车道都能用 NyxID **现有**表面实现，无需 NyxID 改动，推翻了此前"NyxID 必须加 nonblocking 契约"的 blocker 定性：
 
 - **Tier A（grant-mode，外移）**：原型的"前置效果卡片"——Aevatar 在计划期创建 tool approval request，用户在任何 NyxID 表面决定，决定写入 grant，计划的 effect 步骤之后经 `has_grant` 直接通过；`nyxidRequestId` 关联 request → decision → resume。Tier A 需要 NyxID 改动，随 Wave 1（`#3312`/NyxID#1400）外移，不在 M40。
-- **Tier B（per_request + observation，M40 范围）**：决策面在 effect 步骤运行时出现；Aevatar **不得**在 tool call 内骑同步 `wait_for_decision` 越过 actor-turn 边界，改用非阻塞 create + poll continuation（legacy `NyxIdRemoteToolApprovalPort` 已有该模式），观察态只能是 `running` / `waiting` / `stalled` 三态，**绝不合成审批卡片**（跨仓库规则）。`#3324`（2026-08-08 新开）负责 lane-A approval observation/resume 实现，但在 Option 2 下明确**不可实现**——它以展示型证据登记，不阻塞 Gate 2。
+- **Tier B（per_request + observation，M40 范围）**：决策面在 effect 步骤运行时出现；Aevatar **不得**在 tool call 内骑同步 `wait_for_decision` 越过 actor-turn 边界，改用非阻塞 create + poll continuation（legacy `NyxIdRemoteToolApprovalPort` 已有该模式），观察态只能是 `running` / `waiting` / `stalled` 三态，**绝不合成审批卡片**（跨仓库规则）。`#3324`（2026-08-08 新开，closed）已按此落地 lane-A approval observation/resume：per_request 观察 + restart-safe effect reconciliation，不阻塞 Gate 2。
 - **诚实约束**：grant 是 service/scope 级且 time-boxed，不是 task 级——grant 超出本任务时卡片文案必须诚实说明；Aevatar 永不合成审批，永不解绑、绕过 NyxID gate。
 
 ## 跨仓库规则与完成契约
@@ -205,7 +205,7 @@ stateDiagram-v2
 
 ## 边界与演进
 
-### 与已有章节的关系（专题登记期只链接、不修改）
+### 与已有章节的关系（专题记录不修改 current 章节）
 
 | 已有章节 | 关系 |
 |---|---|
