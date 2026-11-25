@@ -45,7 +45,7 @@
 本站区分四类状态：`current` 是冻结基线中的当前设计，`mixed` 明确隔离历史或目标态，`historical` 只保留长期设计教训，`target` 仅登记尚未落地的限制与退出条件。
 
 !!! info "证据基线"
-    全书以冻结上游 `f02aa690bbebb9cabeac30a553d737486b0eb661` 为证据起点；完整章节、状态与 issue 对照见 [PLAN](https://github.com/eanzhao-os/aevatar-review/blob/main/PLAN.md)。
+    全书以冻结上游 `f02aa690bbebb9cabeac30a553d737486b0eb661` 为证据起点；完整章节、状态与 issue 对照见 [PLAN](https://github.com/xnoetic/aevatar-review/blob/main/PLAN.md)。
 
 !!! warning "外部仓库边界"
-    `~/Code/aevatar` 是只读事实源，本仓库不修改其任何文件。构建与验证方式见 [README](https://github.com/eanzhao-os/aevatar-review/blob/main/README.md)。
+    `~/Code/aevatar` 是只读事实源，本仓库不修改其任何文件。构建与验证方式见 [README](https://github.com/xnoetic/aevatar-review/blob/main/README.md)。

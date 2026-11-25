@@ -1,10 +1,10 @@
 site_name: Aevatar 结构化中文解读
 site_description: 基于冻结上游 f02aa690 的 Aevatar 结构化中文解读：14 个 block、72 篇实质章节，覆盖请求、Actor、Workflow、CQRS、产品身份、Channel、Automation 与生产运行。
 site_author: eanzhao
-site_url: https://eanzhao-os.github.io/aevatar-review/
+site_url: https://docs.xnoetic.com/aevatar-review/
 
-repo_name: eanzhao-os/aevatar-review
-repo_url: https://github.com/eanzhao-os/aevatar-review
+repo_name: xnoetic/aevatar-review
+repo_url: https://github.com/xnoetic/aevatar-review
 
 docs_dir: docs
 site_dir: site
@@ -46,7 +46,7 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/eanzhao-os/aevatar-review
+      link: https://github.com/xnoetic/aevatar-review
   generator: false
 
 extra_css:

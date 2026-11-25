@@ -94,7 +94,7 @@ Task 14 与 Task 17 迁移 `09/02` 与 `12/04` 时必须重新取哈希并按节
 | 引用 | 内容 | 处置 |
 |---|---|---|
 | `fix/chapter-navigation` @ `9bdf078` | 已批准双行导航布局的实现（`scripts/check-site-ui.py`、`docs/stylesheets/extra.css`、`mkdocs.yml`、`.github/workflows/docs.yml`） | 用户于 2026-07-28 明确要求捞取其他分支成品并只在 `main` 续写；原分支 source contract 通过后，于 `e751fe8` 合入 `main`。Task 19 扩展导航到 `00–13` 时必须保留该设计契约，并把 `CURRENT_TOP_LEVEL_COUNT` 从 14 更新为 15。 |
-| `codex/fix-pages-owner` @ `56e2a57` | 仓库迁移后的 Pages、repository 与 social URL 修正 | 原提交 `git show --check` 通过后，经 `b39578c` 合入 `main`；Task 19 改写 `mkdocs.yml` 时必须保留 `eanzhao-os` 地址。 |
+| `codex/fix-pages-owner` @ `56e2a57` | 仓库迁移后的 Pages、repository 与 social URL 修正 | 原提交 `git show --check` 通过后，经 `b39578c` 合入 `main`；Task 19 改写 `mkdocs.yml` 时必须保留 `xnoetic` 地址。 |
 
 ## 5. 外部只读仓库漂移记录
 
@@ -135,6 +135,6 @@ Task 19 在删除旧路径前完成四项受保护结构输入的合并复核：
 | `07/index.md` | `5a3c0d4eef5104196fdd739cce1c999f6b963690932f9d8f6250e966ae18f22f` | Conversation、Channel、Automation 三块导航已按新边界拆分；顺序与目标 manifest 一致 | `migrated-reviewed` |
 | `10/index.md` | `fcfb0b050416da274e0e511d9edc505ef76e334b939579515ea6bb77e178c488` | 生产运行与演进案例已分离到 `10` / `12`，不再把已知问题当作现役目录 | `migrated-reviewed` |
 | `PLAN.md` | `9d8b8d6443c7cdb4926a2ee88579ea4c444a0bc6fcb77fe6c7e3eeb3575c1daf` | 合并改写为 14 block、72 行 checked 清单；每行路径、status、H1 与 issue 已机械对账 | `migrated-reviewed` |
-| `mkdocs.yml` | `f2663195102864261a6f147af7b954a76513aef93e1a643530e04bd566e76a50` | nav 原子替换为首页 + 14 block + 72 章；保留 Material 主题、双行 CSS、`eanzhao-os` Pages/repository/social URL | `migrated-reviewed` |
+| `mkdocs.yml` | `f2663195102864261a6f147af7b954a76513aef93e1a643530e04bd566e76a50` | nav 原子替换为首页 + 14 block + 72 章；保留 Material 主题、双行 CSS、`xnoetic` Pages/repository/social URL | `migrated-reviewed` |
 
 本轮只读回原始内容和新落点进行比较；未读取 `.superpowers/brainstorm/.last-token`，未把运行态或凭据指纹纳入迁移证据。

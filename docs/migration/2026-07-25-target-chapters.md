@@ -20,115 +20,115 @@
 
 ## `00` 导读与基线（3）
 
-- [x] `00/01-reading-guide.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/167
-- [x] `00/02-version-evidence-and-status.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/168
-- [x] `00/03-repository-map.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/169
+- [x] `00/01-reading-guide.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/167
+- [x] `00/02-version-evidence-and-status.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/168
+- [x] `00/03-repository-map.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/169
 
 ## `01` 启动与请求（4）
 
-- [x] `01/01-quick-start.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/170
-- [x] `01/02-hosts-and-composition.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/171
-- [x] `01/03-chat-conversation-turn-contract.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/172
-- [x] `01/04-request-streaming-lifecycle.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/173
+- [x] `01/01-quick-start.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/170
+- [x] `01/02-hosts-and-composition.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/171
+- [x] `01/03-chat-conversation-turn-contract.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/172
+- [x] `01/04-request-streaming-lifecycle.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/173
 
 ## `02` Actor 运行内核（6）
 
-- [x] `02/01-agent-actor-runtime.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/174
-- [x] `02/02-envelope-command-event-query.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/175
-- [x] `02/03-gagent-event-pipeline.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/176
-- [x] `02/04-state-event-sourcing-and-guard.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/177
-- [x] `02/05-dispatch-routing-and-topology.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/178
-- [x] `02/06-local-runtime-and-lifecycle.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/179
+- [x] `02/01-agent-actor-runtime.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/174
+- [x] `02/02-envelope-command-event-query.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/175
+- [x] `02/03-gagent-event-pipeline.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/176
+- [x] `02/04-state-event-sourcing-and-guard.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/177
+- [x] `02/05-dispatch-routing-and-topology.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/178
+- [x] `02/06-local-runtime-and-lifecycle.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/179
 
 ## `03` Workflow 编排（7）
 
-- [x] `03/01-workflow-model-and-identities.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/180
-- [x] `03/02-yaml-schema-and-validation.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/181
-- [x] `03/03-execution-kernel-and-outcomes.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/182
-- [x] `03/04-primitives-catalog.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/183
-- [x] `03/05-pause-signal-approval-and-resume.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/184
-- [x] `03/06-saga-compensation-and-recovery.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/185
-- [x] `03/07-connectors-and-capability-admission.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/186
+- [x] `03/01-workflow-model-and-identities.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/180
+- [x] `03/02-yaml-schema-and-validation.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/181
+- [x] `03/03-execution-kernel-and-outcomes.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/182
+- [x] `03/04-primitives-catalog.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/183
+- [x] `03/05-pause-signal-approval-and-resume.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/184
+- [x] `03/06-saga-compensation-and-recovery.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/185
+- [x] `03/07-connectors-and-capability-admission.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/186
 
 ## `04` AI 执行与工具（5）
 
-- [x] `04/01-role-agent-and-streaming-run.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/187
-- [x] `04/02-llm-providers-and-route-selection.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/188
-- [x] `04/03-tool-loop-catalog-and-presentation.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/189
-- [x] `04/04-tool-approval-and-authorization.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/190
-- [x] `04/05-prompt-overlays-and-agent-context.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/191
+- [x] `04/01-role-agent-and-streaming-run.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/187
+- [x] `04/02-llm-providers-and-route-selection.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/188
+- [x] `04/03-tool-loop-catalog-and-presentation.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/189
+- [x] `04/04-tool-approval-and-authorization.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/190
+- [x] `04/05-prompt-overlays-and-agent-context.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/191
 
 ## `05` CQRS、Projection 与 Audit（6）
 
-- [x] `05/01-command-event-projection-readmodel.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/192
-- [x] `05/02-committed-state-and-observation.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/193
-- [x] `05/03-projection-lifecycle-and-leases.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/194
-- [x] `05/04-readmodel-stores-versioning-and-rebuild.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/195
-- [x] `05/05-workflow-agui-and-live-observation.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/196
-- [x] `05/06-audit-trail-lifecycle-and-export.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/197
+- [x] `05/01-command-event-projection-readmodel.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/192
+- [x] `05/02-committed-state-and-observation.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/193
+- [x] `05/03-projection-lifecycle-and-leases.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/194
+- [x] `05/04-readmodel-stores-versioning-and-rebuild.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/195
+- [x] `05/05-workflow-agui-and-live-observation.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/196
+- [x] `05/06-audit-trail-lifecycle-and-export.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/197
 
 ## `06` 产品资源与身份（5）
 
-- [x] `06/01-scope-team-member-resource-model.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/198
-- [x] `06/02-draft-revision-binding-and-published-service.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/199
-- [x] `06/03-catalog-visibility-and-scope-authorization.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/200
-- [x] `06/04-studio-commands-acks-and-readmodels.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/201
-- [x] `06/05-work-orders-and-durable-intent.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/202
+- [x] `06/01-scope-team-member-resource-model.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/198
+- [x] `06/02-draft-revision-binding-and-published-service.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/199
+- [x] `06/03-catalog-visibility-and-scope-authorization.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/200
+- [x] `06/04-studio-commands-acks-and-readmodels.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/201
+- [x] `06/05-work-orders-and-durable-intent.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/202
 
 ## `07` Conversation、NyxIdChat 与 Agent Profile（4）
 
-- [x] `07/01-conversation-turn-and-chat-history.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/203
-- [x] `07/02-nyxid-chat-actor-model-and-progress.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/204
-- [x] `07/03-agent-profile-and-immutable-binding.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/205
-- [x] `07/04-turn-authority-tool-catalog-and-retry.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/206
+- [x] `07/01-conversation-turn-and-chat-history.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/203
+- [x] `07/02-nyxid-chat-actor-model-and-progress.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/204
+- [x] `07/03-agent-profile-and-immutable-binding.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/205
+- [x] `07/04-turn-authority-tool-catalog-and-retry.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/206
 - [x] `07/05-milestone-40-nyxid-assistant-support-contract.md` — status:current — issue:https://github.com/aevatarAI/aevatar/milestone/40
 
 ## `08` Ingress、Channel、文件与语音（5）
 
-- [x] `08/01-ingress-normalization-and-routing.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/207
-- [x] `08/02-channel-runtime-and-credential-boundary.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/208
-- [x] `08/03-lark-delivery-interaction-and-repair.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/209
-- [x] `08/04-file-artifacts-and-attachments.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/210
-- [x] `08/05-voice-control-and-media-planes.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/211
+- [x] `08/01-ingress-normalization-and-routing.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/207
+- [x] `08/02-channel-runtime-and-credential-boundary.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/208
+- [x] `08/03-lark-delivery-interaction-and-repair.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/209
+- [x] `08/04-file-artifacts-and-attachments.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/210
+- [x] `08/05-voice-control-and-media-planes.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/211
 
 ## `09` Automation、调度与凭证（5）
 
-- [x] `09/01-automation-resource-api-and-readmodels.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/212
-- [x] `09/02-scheduled-actor-callback-and-fire.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/213
-- [x] `09/03-owner-authorization-and-agent-key.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/214
-- [x] `09/04-vault-reference-and-revocation-compensation.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/215
-- [x] `09/05-production-canary-and-recovery.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/216
+- [x] `09/01-automation-resource-api-and-readmodels.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/212
+- [x] `09/02-scheduled-actor-callback-and-fire.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/213
+- [x] `09/03-owner-authorization-and-agent-key.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/214
+- [x] `09/04-vault-reference-and-revocation-compensation.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/215
+- [x] `09/05-production-canary-and-recovery.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/216
 
 ## `10` 分布式与生产运行（8）
 
-- [x] `10/01-production-topology-and-configuration.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/217
-- [x] `10/02-orleans-runtime.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/218
-- [x] `10/03-garnet-clustering-and-secret-storage.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/219
-- [x] `10/04-streaming-transport-and-kafka.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/220
-- [x] `10/05-authentication-scope-and-admin-authorization.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/221
-- [x] `10/06-managed-codex-sandbox-and-delegation.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/222
-- [x] `10/07-observability-status-and-observatory.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/223
-- [x] `10/08-architecture-and-security-guards.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/224
+- [x] `10/01-production-topology-and-configuration.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/217
+- [x] `10/02-orleans-runtime.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/218
+- [x] `10/03-garnet-clustering-and-secret-storage.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/219
+- [x] `10/04-streaming-transport-and-kafka.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/220
+- [x] `10/05-authentication-scope-and-admin-authorization.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/221
+- [x] `10/06-managed-codex-sandbox-and-delegation.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/222
+- [x] `10/07-observability-status-and-observatory.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/223
+- [x] `10/08-architecture-and-security-guards.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/224
 
 ## `11` 场景教程与 Cookbook（5）
 
-- [x] `11/01-run-a-simple-workflow.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/225
-- [x] `11/02-build-a-branching-tool-workflow.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/226
-- [x] `11/03-create-bind-and-invoke-a-team-member.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/227
-- [x] `11/04-connect-a-channel-and-handle-files.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/228
-- [x] `11/05-create-verify-and-troubleshoot-automation.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/229
+- [x] `11/01-run-a-simple-workflow.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/225
+- [x] `11/02-build-a-branching-tool-workflow.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/226
+- [x] `11/03-create-bind-and-invoke-a-team-member.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/227
+- [x] `11/04-connect-a-channel-and-handle-files.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/228
+- [x] `11/05-create-verify-and-troubleshoot-automation.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/229
 
 ## `12` 架构演进、案例与开放缺口（5）
 
-- [x] `12/01-evolution-method-and-timeline.md` — status:historical — issue:https://github.com/eanzhao-os/aevatar-review/issues/230
-- [x] `12/02-issue-decisions-by-theme.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/231
-- [x] `12/03-retired-and-superseded-components.md` — status:historical — issue:https://github.com/eanzhao-os/aevatar-review/issues/232
-- [x] `12/04-incident-case-studies.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/233
-- [x] `12/05-open-gaps-and-canon-drift.md` — status:target — issue:https://github.com/eanzhao-os/aevatar-review/issues/234
+- [x] `12/01-evolution-method-and-timeline.md` — status:historical — issue:https://github.com/xnoetic/aevatar-review/issues/230
+- [x] `12/02-issue-decisions-by-theme.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/231
+- [x] `12/03-retired-and-superseded-components.md` — status:historical — issue:https://github.com/xnoetic/aevatar-review/issues/232
+- [x] `12/04-incident-case-studies.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/233
+- [x] `12/05-open-gaps-and-canon-drift.md` — status:target — issue:https://github.com/xnoetic/aevatar-review/issues/234
 
 ## `13` 术语与事实源索引（4）
 
-- [x] `13/01-glossary.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/235
-- [x] `13/02-canon-and-adr-index.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/236
-- [x] `13/03-chapter-source-matrix.md` — status:current — issue:https://github.com/eanzhao-os/aevatar-review/issues/237
-- [x] `13/04-issue-evolution-index.md` — status:mixed — issue:https://github.com/eanzhao-os/aevatar-review/issues/238
+- [x] `13/01-glossary.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/235
+- [x] `13/02-canon-and-adr-index.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/236
+- [x] `13/03-chapter-source-matrix.md` — status:current — issue:https://github.com/xnoetic/aevatar-review/issues/237
+- [x] `13/04-issue-evolution-index.md` — status:mixed — issue:https://github.com/xnoetic/aevatar-review/issues/238
