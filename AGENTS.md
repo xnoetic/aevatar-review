@@ -131,3 +131,11 @@
 - FI-006 变更必须可验证且基于 evidence；失败、缺口和越界承诺要显式暴露，禁止用静默假设或禁用测试换取通过。
 - FI-007 删除优先；废弃路径直接移除，除非 host 规则明确要求迁移期兼容。
 <!-- consensus-rnd:foundational-invariants:end -->
+
+## 验证不依赖 GitHub CI
+
+2026-11-25 起，本仓库不用 GitHub Actions 做验证，也不用它构建、发布或部署（发布 GitHub Pages 除外）。`.github/workflows/` 里只允许放发布 GitHub Pages 的工作流，别的工作流不要新建。
+
+- 测试、检查、构建都在本机（或经 calltable `ct` 在验证机）上跑，推送前自己跑完。
+- 提交和推送说明里写实际跑过的命令和环境，不写「CI 通过」，也不要等 CI 结果。
+- 保留的 `.github/workflows/docs.yml` 只负责发布 GitHub Pages，它的结果不能当作验证证据；发布前先在本机跑过图示校验和 `mkdocs build`。
